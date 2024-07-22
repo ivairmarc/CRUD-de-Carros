@@ -1,15 +1,30 @@
 {% extends 'register_user.html' %}
+{% load bootstrap %}
 
 {% block content %}
-    <form class="user">
+    <form class="user" method="post">
         {% csrf_token %}
-        <div class="form-group">
-            {{ user_form }}
+        <div class="form-group row">
+            {{ user_form.username.errors }}
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <label>Usuário: </label>
+                {{ user_form.username }}
+            </div>
         </div>
-
-        <a href="index.html" class="btn btn-primary btn-user btn-block">
-            Login
-        </a>
+        <div class="form-group row">
+            {{ user_form.password1.errors }}<br>
+            {{ user_form.password2.errors }}<br>
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <label>Senha: </label><br>
+                {{ user_form.password1 }}
+            </div>
+            
+            <div class="col-sm-6">
+                <label>Confirmação de senha: </label>
+                {{ user_form.password2 }}
+            </div>
+        </div>
+        <input type="submit" value="Cadastrar" class="btn btn-primary btn-user btn-block">
         <hr>
         <a href="index.html" class="btn btn-google btn-user btn-block">
             <i class="fab fa-google fa-fw"></i> Login with Google
