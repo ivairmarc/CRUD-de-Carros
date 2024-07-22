@@ -10,4 +10,4 @@ Primeiro Template(base_generic.html)
 
 Novo Template (base.html)
 
-![alt text](/read_img/list_new.png.png)
+![alt text](/read_img/list_new.png)
