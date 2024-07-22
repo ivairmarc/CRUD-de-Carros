@@ -1,0 +1,31 @@
+# ----- Venv ------
+
+# Criação do venv
+ - python -m venv venv 
+
+# habilitar execução de scripts no windows
+ - Set-ExecutionPolicy Unrestricted
+
+# Ativando 
+ - windows = .\venv\Scripts\activate
+ - linux   = source venv/bin/activate 
+
+# Desativando o venv
+ - deactive
+
+
+# ----- DJANGO ------
+
+# startando o projeto 
+- django-admin startproject app .  
+
+# Create tables
+ - python manage.py makemigrations
+
+ - python manage.py migrate
+
+# Create super user
+ - python manage.py createsuperuser   ADM =  user: pycoder pass: master
+
+# start server
+ - python manage.py runserver
