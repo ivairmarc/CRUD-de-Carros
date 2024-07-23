@@ -25,9 +25,11 @@
 </head>
 {% endblock %}
 
-{% block body%}
+
 
 <body id="page-top">
+{% block body %}
+
     {% if user.is_authenticated %}
         <!-- Page Wrapper -->
         <div id="wrapper">
@@ -52,7 +54,7 @@
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         {% block span %}
                             <span>Dashboard</span></a>
-                        {% endblock%}
+                        {% endblock %}
                 </li>
 
                 <!-- Divider -->
@@ -300,7 +302,7 @@
                             <h1 class="h3 mb-0 text-gray-800">
                                 {% block page-title %}
                                     Dashboard
-                                {% endblock%} 
+                                {% endblock %} 
                             </h1>
                             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
@@ -308,18 +310,18 @@
 
                         <div class="row">
                             <!-- Area Chart -->
-                            <div class="col-md-10 ">
+                            {% block card %}
+                            <div class="col-md-auto ">
                                 <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
-                                    {% block content-page%}
+                                    {% block content-page %}
                                     
-                                        {% block content %}
                                         
-                                        {% endblock %}
                                     
                                     {% endblock %}
                                 </div>
                             </div>
+                            {% endblock %}
                         </div>
                     </div>
                     <!-- /.container-fluid -->
@@ -376,7 +378,8 @@
         <!-- Custom scripts for all pages-->
         <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
     {% endblock %}
-</body>
 {% endblock %}
+</body>
+
 
 </html>

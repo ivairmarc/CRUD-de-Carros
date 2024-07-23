@@ -1,15 +1,14 @@
 {% extends "base.html" %}
 
 
-{% block page %}
+{% block page-title %}
     Lista de carros
-{% endblock%}
+{% endblock %}
 
 
-{% block content-page%}
+{% block content-page %}
 <div class="album">
   <div class="row" >
-    {% block content %}
     {% if cars %}
       {% for car in cars %}
         <div class=" col-md-3 mb-2 mt-2 item">
@@ -17,20 +16,17 @@
               {% if car.photo %}
                 <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}" width="100%" height="50%">
               {% else %}
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="50%" xmlns="http://www.w3.org/2000/svg" 
-                    role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" 
-                    focusable="false">
-                    <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Sem imagem</text></svg>
+                <img src="../../media/cars/dummy.jpg" alt="{{ car.model }} - {{ car.brand }}" width="100%" height="50%">
               {% endif %}
 
             <div class="card-body">
                 <p class="card-text">{{ car.brand }} - {{ car.model }} - {{ car.factory_year }}</p>
-                <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
+                <p>{{ car.model_year }} - R$ {{ car.value }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      <a href="{% url 'car_detail' pk=car.pk %}" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+                      
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Editar </button>
                     </div>
                     <small class="text-muted">9 mins</small>
                 </div>
@@ -43,9 +39,6 @@
       <p class="no-results">Nenhum carro encontrado</p>
 
     {% endif %}
-
-
-    {% endblock %}
   </div>
 </div> 
 {% endblock %}
