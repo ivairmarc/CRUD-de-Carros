@@ -13,3 +13,7 @@ Novo Template (base.html)
 # Detalhes do veiculo
 
 ![alt text](/read_img/detalhes.png)
+
+# Cadastrar
+
+![alt text](/read_img/cadastrar.png)
