@@ -13,23 +13,12 @@ class CarsListView(ListView):
       cars = super().get_queryset().order_by('model')
       search = self.request.GET.get('search')
       if search:
-          cars = cars.filter(model_icontains=search)
+          cars = cars.filter(model__icontains=search)
       return cars
       
 
-class NewCarView(CreateView):
-
-   def post(self, request):
-      new_car_form =CarModelForm(request.POST, request.FILES)
-      if new_car_form.is_valid():
-         new_car_form.save()
-         return redirect('cars_list')
-   
-   def get(self, request):
-         new_car_form = CarModelForm()
-
-         return render(request, 'new_car.html', { 'new_car_form': new_car_form })
-
-
-
-
+class NewCarCreateView(CreateView):
+   model = Car
+   form_class = CarModelForm
+   template_name = 'new_car.html'
+   success_url = '/cars/'
