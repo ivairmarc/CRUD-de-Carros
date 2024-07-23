@@ -6,8 +6,10 @@
 
 Primeiro Template(base_generic.html)
 
-![alt text](/read_img/list_old.png)
-
 Novo Template (base.html)
 
 ![alt text](/read_img/list_new.png)
+
+# Detalhes do veiculo
+
+![alt text](/read_img/detalhes.png)
