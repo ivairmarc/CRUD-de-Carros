@@ -25,6 +25,9 @@
                     <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                     <!-- Profile picture upload button-->
                     <button class="btn btn-primary" type="button">Upload new image</button>
+                    <a href="{% url 'car_update' pk=car.pk %}" class="btn btn-secondary">
+                      Editar
+                    </a>
                 </div>
             </div>
         </div>

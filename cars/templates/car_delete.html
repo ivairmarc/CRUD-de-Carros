@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load bootstrap %}
 
 {% block search %}
 {% endblock%}
@@ -10,9 +9,9 @@
 
 {% block card %}
 <div class="col-md-5 ">
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-4 p-1">
         <p>Tem certeza que deseja deletar o carro <strong>{{ object.brand }} {{ object.model }}</p>
-        <form>
+        <form method="post">
             {% csrf_token %}
             <div class="container-fluid p-3 mb-2 mt-2">
                 <button type="submit" class="btn btn-danger">Deletar Carro</button>
