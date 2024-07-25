@@ -17,3 +17,6 @@ Novo Template (base.html)
 # Cadastrar
 
 ![alt text](/read_img/cadastrar.png)
+
+# Marcas
+![alt text](/read_img/list_marcas.png)
