@@ -14,16 +14,17 @@
             <thead>
                 <tr>      
                   <th scope="col">Marca</th>
+                  <th>Editar</th>
                 </tr>
               </thead>
               <tbody>
                 {% for brand in brands %}
                 <tr>
-                    <td>{{ brand }}</td>                  
+                    <td>{{ brand }}</td> 
+                    <td><a href="" class="btn btn-sm-danger"><i class="fas fa-fw fa-wrench"></i></a></td>                 
                 </tr>
                 {% endfor %}
               </tbody>
         </table>
     </div>
-
 {% endblock %}
