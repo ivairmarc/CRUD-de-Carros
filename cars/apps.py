@@ -7,3 +7,4 @@ class CarsConfig(AppConfig):
 
     def ready(self):
         import cars.signals
+        

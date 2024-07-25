@@ -15,6 +15,11 @@ def car_inventory_update():
     )
 
 
+@receiver(pre_save, sender=Car)
+def car_pre_save(sender, instance, **kwargs):
+    ...
+
+
 @receiver(post_delete, sender=Car)
 def car_post_delete(sender, instance, **kwargs):
     car_inventory_update()
@@ -23,3 +28,4 @@ def car_post_delete(sender, instance, **kwargs):
 @receiver(post_save, sender=Car)
 def car_post_save(sender, instance, **Kwargs):
     car_inventory_update()
+    

@@ -8,75 +8,70 @@
 {% endblock %}
 
                         
-{% block card %}                         
+{% block card %}
+  <div class="container col-xl-12">                       
     <div class="row">
-        <div class="col-xl-4">
-            <!-- Profile picture card-->
-            <div class="card mb-4 mb-xl-0">
-                <div class="card-header">Profile Picture</div>
-                <div class="card-body text-center">
-                    <!-- Profile picture image-->
-                    {% if object.photo %}
-                    <img class="img-account-profile  mb-2" src="{{ object.photo.url }}" alt="" width="100%" height="50%">
-                    {% else %}
-                    <img src="../../media/cars/dummy.jpg" alt="{{ car.model }} - {{ car.brand }}" width="100%" height="50%">
-                    {% endif %}
-                    <!-- Profile picture help block-->
-                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                    <!-- Profile picture upload button-->
-                    <button class="btn btn-primary" type="button">Upload new image</button>
-                    <a href="{% url 'car_update' pk=car.pk %}" class="btn btn-secondary">
-                      Editar
-                    </a>
-                </div>
-            </div>
-        </div>
+      <div class="col-xl-3">
+          <!-- Profile picture card-->
+          <div class="card mb-4 mb-xl-0">
+              <div class="card-header">Profile Picture</div>
+              <div class="card-body text-center">
+                  <!-- Profile picture image-->
+                  {% if object.photo %}
+                  <img class="img-account-profile  mb-2" src="{{ object.photo.url }}" alt="" width="100%" height="50%">
+                  {% else %}
+                  <img src="../../media/cars/dummy.jpg" alt="{{ car.model }} - {{ car.brand }}" width="100%" height="50%">
+                  {% endif %}
+                  <!-- Profile picture help block-->
+                  <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                  <!-- Profile picture upload button-->
+                  <button class="btn btn-primary" type="button">Upload new image</button>
+                  <a href="{% url 'car_update' pk=car.pk %}" class="btn btn-secondary">
+                    Editar
+                  </a>
+              </div>
+          </div>
+      </div>
 
-        <div class="col-xl-6">
-            <!-- Account details card-->
-            <div class="card mb-4">
-                <div class="card-header">Especificação</div>
-                <div class="card-body">
-                    <h2>{{ object.brand }} {{ object.model }}</h2>
-                    <p><strong>Ano de fabricação: </strong>{{ object.factory_year }}</p>
-                    <p><strong>Ano de modelo: </strong>{{ object.model_year }}</p>
-                    <p><strong>Placa: </strong>{{ object.plate }}</p>
-                    <p><strong>Preço: </strong>R$ {{ object.value }}</p>
-                </div>
-            </div>
-        </div>
+      <div class="col-xl-4">
+          <!-- Account details card-->
+          <div class="card mb-4">
+              <div class="card-header">Especificação</div>
+              <div class="card-body">
+                  <h2>{{ object.brand }} {{ object.model }}</h2>
+                  <p><strong>Ano de fabricação: </strong>{{ object.factory_year }}</p>
+                  <p><strong>Ano de modelo: </strong>{{ object.model_year }}</p>
+                  <p><strong>Placa: </strong>{{ object.plate }}</p>
+                  <p><strong>Preço: </strong>R$ {{ object.value }}</p>
+              </div>
+          </div>
+      </div>
     </div>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <div class="card bg-white mt-4 col-xl-6">
+      <ul class="nav nav-tabs" role="tablist" id="myTab">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+          <a class="nav-link active" id="simple-tab-0" data-bs-toggle="tab" href="#simple-tabpanel-0" role="tab" aria-controls="simple-tabpanel-0" aria-selected="true">Descrição</a>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+          <a class="nav-link" id="simple-tab-1" data-bs-toggle="tab" href="#simple-tabpanel-1" role="tab" aria-controls="simple-tabpanel-1" aria-selected="false">Tab 2</a>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Messages</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
+          <a class="nav-link" id="simple-tab-2" data-bs-toggle="tab" href="#simple-tabpanel-2" role="tab" aria-controls="simple-tabpanel-2" aria-selected="false">Tab 3</a>
         </li>
       </ul>
-      
-      <div class="tab-content">
-        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-           
+      <div class="tab-content p-1" id="tab-content">
+        <div class="tab-pane active " id="simple-tabpanel-0" role="tabpanel" aria-labelledby="simple-tab-0">
+          <div class="info bg-light">
+            {% if object.bio %}
+              {{ object.bio }}
+            {% endif %}
+          </div>
         </div>
-        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
-        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+        <div class="tab-pane" id="simple-tabpanel-1" role="tabpanel" aria-labelledby="simple-tab-1">Tab 2 selected</div>
+        <div class="tab-pane" id="simple-tabpanel-2" role="tabpanel" aria-labelledby="simple-tab-2">Tab 3 selected</div>
       </div>
-      
-      <script>
-        var firstTabEl = document.querySelector('#myTab li:last-child a')
-        var firstTab = new bootstrap.Tab(firstTabEl)
-      
-        firstTab.show()
-      </script>
-      
+    </div>
+  </div> 
 {% endblock %}
                                     
 

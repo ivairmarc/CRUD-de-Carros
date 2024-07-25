@@ -13,7 +13,7 @@
       {% for car in cars %}
         <div class=" col-md-3 mb-2 mt-2 item">
           <div class="card shadow-sm">
-            <div>
+            <div class="card_vehicle">
               {% if car.photo %}
                 <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}" width="100%" height="50%">
               {% else %}
