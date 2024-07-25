@@ -1,0 +1,31 @@
+{% extends 'form_car.html' %}
+
+{% load bootstrap %}
+
+{% block page-title %}
+    Cadastrar
+{% endblock%}
+
+
+{% block content%}
+
+    <div class="form-group row">
+        <div class="col-sm-9 mb-3 mb-sm-0">
+            {{ form|bootstrap}}
+        </div>
+        
+    </div>
+
+{% endblock %}
+
+{% block cancel %}
+    <a href="{% url 'cars_list' %}" class="btn btn-danger mb-2">Cancelar</a>
+{% endblock %}
+
+{% block cardTwo %}
+
+  
+    
+
+{% endblock %}
+

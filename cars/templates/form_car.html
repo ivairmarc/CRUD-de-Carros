@@ -13,37 +13,38 @@
     <div class="card shadow mb-4">
         <form method="post" enctype="multipart/form-data" class="p-3">
             {% csrf_token %}
-            
-            <div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    {{ form.model|bootstrap }}
+            {% block content%}
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        {{ form.model|bootstrap }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form.brand|bootstrap }}
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    {{ form.brand|bootstrap }}
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        {{ form.factory_year|bootstrap }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form.plate|bootstrap }}
+                    </div>
+                </div><div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        {{ form.model_year|bootstrap }}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form.value|bootstrap }}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    {{ form.factory_year|bootstrap }}
+                <div class=" mb-2 col-lg-8">
+                    {{ form.photo }}            
                 </div>
-                <div class="col-sm-6">
-                    {{ form.plate|bootstrap }}
+                <div class=" mb-2 col-lg-8">
+                    <label>Descrição</label>
+                    {{ form.bio }}            
                 </div>
-            </div><div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    {{ form.model_year|bootstrap }}
-                </div>
-                <div class="col-sm-6">
-                    {{ form.value|bootstrap }}
-                </div>
-            </div>
-            <div class=" mb-2 col-lg-8">
-                {{ form.photo }}            
-            </div>
-            <div class=" mb-2 col-lg-8">
-                <label>Descrição</label>
-                {{ form.bio }}            
-            </div>
+            {% endblock %}
            <input type="submit" value="Salvar" class="btn btn-success mb-2">
            {% block cancel %}
            <a href="{% url 'car_detail' pk=car.pk %}" class="btn btn-danger mb-2">Cancelar</a>
@@ -51,4 +52,6 @@
         </form>
     </div>
 </div>
+{% block cardTwo %}
+{% endblock %}
 {% endblock %}

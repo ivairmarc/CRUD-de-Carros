@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block page-title %}
+    Lista de Marcas
+{% endblock %}
+
+
+{% block content-page %}
+
+    <!-- Account details card-->
+    <div class="card">
+        <table class="table table-hover">
+            <thead>
+                <tr>      
+                  <th scope="col">Marca</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for brand in brands %}
+                <tr>
+                    <td>{{ brand }}</td>                  
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+    </div>
+
+{% endblock %}
