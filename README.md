@@ -1,3 +1,15 @@
+# CRM de cadastros de veículos 
+
+Este prjeto foi desenvolvido em Python utilizando o framework Django.
+nele vc pode cadastrar varios veículos, editar, deletar.
+
+# Funcionalidades
+
+- Cadastro de veículos
+- Alteração e deleção
+- Cadastro de marcas
+- Controle de usuários
+
 #tela de login
 
 ![alt text](/read_img/login.png)
