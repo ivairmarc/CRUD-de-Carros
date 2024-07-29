@@ -7,7 +7,7 @@
         <div class="form-group row">
             {{ user_form.username.errors }}
             <div class="col-sm-6 mb-3 mb-sm-0">
-                <label>Usuário: </label>
+                <label for="{{ user_form.username.id_for_label }}">Usuário: </label>
                 {{ user_form.username }}
             </div>
             
@@ -16,12 +16,12 @@
             {{ user_form.password1.errors }}<br>
             {{ user_form.password2.errors }}<br>
             <div class="col-sm-6 mb-3 mb-sm-0">
-                <label>Senha: </label><br>
+                <label for="{{ user_form.password1.id_for_label }}">Senha: </label><br>
                 {{ user_form.password1 }}
             </div>
             
             <div class="col-sm-6">
-                <label>Confirmação de senha: </label>
+                <label for="{{ user_form.password2.id_for_label }}">Confirmação de senha: </label>
                 {{ user_form.password2 }}
             </div>
         </div>

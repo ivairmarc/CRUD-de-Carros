@@ -15,13 +15,13 @@
           <div class="card shadow-sm">
             <div class="card_vehicle">
               {% if car.photo %}
-                <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}" width="100%" height="50%">
+                <img src="{{ car.photo.url }}" alt="{{ car.model_car }} - {{ car.brand }}" width="100%" height="50%">
               {% else %}
-                <img src="../../media/cars/dummy.jpg" alt="{{ car.model }} - {{ car.brand }}" width="100%" height="50%">
+                <img src="../../media/cars/dummy.jpg" alt="{{ car.model_car }} - {{ car.brand }}" width="100%" height="50%">
               {% endif %}
             </div>
             <div class="card-body">
-                <p class="card-text">{{ car.brand }} - {{ car.model }} - {{ car.factory_year }}</p>
+                <p class="card-text">{{ car.brand }} - {{ car.model_car }} - {{ car.factory_year }}</p>
                 <p>{{ car.model_year }} - R$ {{ car.value }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="card-body ">

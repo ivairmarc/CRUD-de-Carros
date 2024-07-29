@@ -6,7 +6,28 @@ class CarModelForm(forms.ModelForm):
 
     class Meta:
         model = Car
-        fields = '__all__'
+        fields = [
+            'model_car',
+            'brand',
+            'factory_year',
+            'plate',
+            'model_year',
+            'value',
+            'photo',
+            'bio',
+        ]
+        widgets = {
+            'model_car':forms.TextInput(attrs={'class': 'form-control',}),
+            'brand':forms.Select(attrs={'class': 'form-control',}),
+            'factory_year':forms.DateInput(attrs={'class': 'form-control',}),
+            'plate':forms.TextInput(attrs={'class': 'form-control',}),
+            'model_year':forms.DateInput(attrs={'class': 'form-control',}),
+            'value':forms.NumberInput(attrs={'class': 'form-control','placeholder': '00.00',}),
+            'photo':forms.FileInput(attrs={'class': 'form-control',}),
+            'bio':forms.Textarea(attrs={'class': 'form-control',}),
+            
+        }
+        
 
     def clean_value(self):
         value = self.cleaned_data.get('value')
