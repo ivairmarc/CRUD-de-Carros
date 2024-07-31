@@ -7,7 +7,7 @@ class CarModelForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = [
-            'model_car',
+            'model',
             'brand',
             'factory_year',
             'plate',
@@ -17,7 +17,7 @@ class CarModelForm(forms.ModelForm):
             'bio',
         ]
         widgets = {
-            'model_car':forms.TextInput(attrs={'class': 'form-control',}),
+            'model':forms.TextInput(attrs={'class': 'form-control',}),
             'brand':forms.Select(attrs={'class': 'form-control',}),
             'factory_year':forms.DateInput(attrs={'class': 'form-control',}),
             'plate':forms.TextInput(attrs={'class': 'form-control',}),

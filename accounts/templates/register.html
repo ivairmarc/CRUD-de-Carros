@@ -10,7 +10,10 @@
                 <label for="{{ user_form.username.id_for_label }}">Usuário: </label>
                 {{ user_form.username }}
             </div>
-            
+            <div class="col-sm-6">
+                <label for="{{ user_form.email.id_for_label }}">Email: </label>
+                {{ user_form.email }}
+            </div>
         </div>
         <div class="form-group row">
             {{ user_form.password1.errors }}<br>

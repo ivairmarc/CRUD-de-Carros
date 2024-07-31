@@ -18,7 +18,7 @@
                 <div class="form-group row">
                     <div class="col-sm-6  mb-sm-0">
                         <label>Modelo</label>
-                        {{ form.model_car }}
+                        {{ form.model }}
                     </div>
                     <div class="col-sm-6">
                         <label>Marca</label>
@@ -47,7 +47,8 @@
                 </div>
                 <div class=" mb-1 col-md-auto">
                     <label>Foto</label>
-                    {{ form.photo }}            
+                    {{ form.photo }}    
+                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>        
                 </div>
                 <div class=" mb-2 col-md-auto">
                     <label>Descrição</label>
