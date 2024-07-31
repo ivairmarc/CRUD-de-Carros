@@ -24,7 +24,7 @@ class CarModelForm(forms.ModelForm):
             'model_year':forms.DateInput(attrs={'class': 'form-control',}),
             'value':forms.NumberInput(attrs={'class': 'form-control','placeholder': '00.00',}),
             'photo':forms.FileInput(attrs={'class': 'form-control',}),
-            'bio':forms.Textarea(attrs={'class': 'form-control',}),
+            'bio':forms.Textarea(attrs={'class' : 'form-control', 'rows':'5'}),
             
         }
         
